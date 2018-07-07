@@ -1,0 +1,7 @@
+body {
+	height: 100%;
+}
+.tool {
+	position: relative;
+   	display: inline-block;
+}
