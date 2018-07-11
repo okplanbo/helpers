@@ -43,14 +43,4 @@ var strings = $('#strings').val().split(/[\r\n]+/);var unique = [];top:for (var 
             }
             $('#semtext').val(rows.join("\r\n"));
         });
-        $("#parseRiv").click(function() {
-            var tokens, rows = [];
-            tokens = Az.Tokens(document.getElementById('semtext').value);
-            var filtered = tokens.done();
-            for (var i in filtered) {
-                if ((filtered[i].type === Az.Tokens.WORD) && (filtered[i].length > 2))
-                    rows.push(filtered[i]);
-            }
-            $('#semtext').val(rows.join("\r\n"));
-        });
     });
