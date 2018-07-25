@@ -1,68 +1,71 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
-<head>
-<title>Text tools</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--<link href="css/main.css" rel="stylesheet"/>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/az.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<div class="container">
-<div class="row">
-	<div class="col-md-6">
-			<h2>Дубликатов удалятор</h2>
-			<p>Вставьте текст с дублями. Дубли будут удалены, строки могут не сохранить исходный порядок.</p>
-			<textarea id="strings" type="text" class="form-control" cols="40" rows="5"></textarea><br><br>
-			<input type="button" id="start" class="btn btn-success" name="delete" value="Удалить дубликаты!">
-	</div>
-
-	<div class="col-md-6">
-		<h2>Ссылковыделятор</h2>
-		<p>Вставьте текст со ссылками. Останутся только ссылки с http:// и https://. Ссылки могут повторяться.</p>
-		<textarea id="text-with-links" type="text" class="form-control" cols="40" rows="5"></textarea><br><br>
-		<input type="button" id="findlinks" class="btn btn-success" value="Найти ссылки!">
-	</div>
-</div>
-
-<hr>
-
-<div class="row">
-	<div class="col-md-6">
-		<h2>Транспонатор<small> (на самом деле, нет)</small></h2>
-		<p>Вставьте числа в столбик. Числа будут уменьшены на 2000 каждое и записаны в строку через точку с запятой.</p>
-		<textarea id="column-nums" type="text" class="form-control" cols="40" rows="5"></textarea><br><br>
-		<input type="button" id="convertToRow" class="btn btn-success" value="Сделать магию!">
-	</div>
-
-	<div class="col-md-6">
-		<h2>Словоразделятор</h2>
-		<p>Вставьте текст. Каждое уникальное слово будет выведено на новой строке.</p><br>
-		<textarea id="semtext" type="text" class="form-control" cols="40" rows="5"></textarea><br><br>
-		<input type="button" id="semAnal" class="btn btn-success" value="Разделить!">
-	</div>
-</div>
-
-<hr>
-
-<div class="row">	
-	<h2 style="margin-left: 15px">Вычитатор</h2>
-	<div class="col-md-4">
-		<p>Вставьте сюда список ИЗ которого вычесть.</p>
-		<textarea id="from-what-to-cut" type="text" class="form-control" cols="40" rows="5"></textarea><br><br>
-	</div>
-	<div class="col-md-4">
-		<p>А сюда список того, ЧТО вычесть.</p>
-		<textarea id="what-to-cut" type="text" class="form-control" cols="40" rows="5"></textarea><br><br>
-	</div>
-	<div style="clear:both; margin-left: 15px">
-	<input type="button" id="start2" class="btn btn-success" name="delete2" value="Вычесть!">
-	</div>
-</div>
-<hr>
-</div>
-</body>
+   <head>
+      <title>Text tools</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!--<link href="css/main.css" rel="stylesheet"/>-->
+      <script src="js/jquery.min.js"></script>
+	  <!-- Az.js - NLP library for Russian language -->
+      <script type="text/javascript" src="js/az.min.js"></script>
+	  <!-- other js -->
+      <script type="text/javascript" src="js/main.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6">
+               <h2>Дубликатов удалятор</h2>
+               <p>Вставьте текст с дублями. Дубли будут удалены, строки могут не сохранить исходный порядок.</p>
+               <textarea id="strings" type="text" class="form-control" cols="40" rows="5"></textarea>
+               <br><br>
+               <input type="button" id="start" class="btn btn-success" name="delete" value="Удалить дубликаты!">
+            </div>
+            <div class="col-md-6">
+               <h2>Ссылковыделятор</h2>
+               <p>Вставьте текст со ссылками. Останутся только ссылки с http:// и https://. Ссылки могут повторяться.</p>
+               <textarea id="text-with-links" type="text" class="form-control" cols="40" rows="5"></textarea>
+               <br><br>
+               <input type="button" id="findlinks" class="btn btn-success" value="Найти ссылки!">
+            </div>
+         </div>
+         <hr>
+         <div class="row">
+            <div class="col-md-6">
+               <h2>Уменьшатор</h2>
+               <p>Вставьте числа в столбик. Числа будут уменьшены на 2000 каждое и записаны в строку через точку с запятой.</p>
+               <textarea id="column-nums" type="text" class="form-control" cols="40" rows="5"></textarea>
+               <br><br>
+               <input type="button" id="convertToRow" class="btn btn-success" value="Сделать магию!">
+            </div>
+            <div class="col-md-6">
+               <h2>Словоразделятор</h2>
+               <p>Вставьте текст. Каждое уникальное слово будет выведено на новой строке.</p>
+               <br>
+               <textarea id="semtext" type="text" class="form-control" cols="40" rows="5"></textarea>
+               <br><br>
+               <input type="button" id="semAnal" class="btn btn-success" value="Разделить!">
+            </div>
+         </div>
+         <hr>
+         <div class="row">
+            <h2 style="margin-left: 15px">Избавлятор</h2>
+            <div class="col-md-4">
+               <p>Список всех слов.</p>
+               <textarea id="from-what-to-cut" type="text" class="form-control" cols="40" rows="5"></textarea>
+               <br><br>
+            </div>
+            <div class="col-md-4">
+               <p>Список лишних слов.</p>
+               <textarea id="what-to-cut" type="text" class="form-control" cols="40" rows="5"></textarea>
+               <br><br>
+            </div>
+            <div style="clear:both; margin-left: 15px">
+               <input type="button" id="start2" class="btn btn-success" name="delete2" value="Избавиться!">
+            </div>
+         </div>
+         <hr>
+      </div>
+   </body>
 </html>
