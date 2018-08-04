@@ -1,7 +1,26 @@
-body {
-	height: 100%;
+textarea {
+	margin-bottom: 30px;
 }
-.tool {
-	position: relative;
-   	display: inline-block;
+
+.words-to-delete {
+	margin-top: 62px;
+}
+
+.word-subtractor-button-top {
+	display:inline;
+}
+.word-subtractor-button-bottom {
+	display:none;
+}
+
+@media (max-width:991px) {
+	.word-subtractor-button-top {
+		display:none;
+	}
+	.word-subtractor-button-bottom {
+		display:inline;
+	}
+	.words-to-delete {
+		margin: 0;
+	}
 }
