@@ -1,26 +1,32 @@
+body {
+	max-width: 1100px;
+	margin-bottom: 30px;
+}
+
 textarea {
 	margin-bottom: 30px;
 }
 
-.words-to-delete {
+.headless {
 	margin-top: 62px;
 }
 
-.word-subtractor-button-top {
-	display:inline;
-}
-.word-subtractor-button-bottom {
-	display:none;
+.bottom {
+	text-align: center;
 }
 
-@media (max-width:991px) {
-	.word-subtractor-button-top {
-		display:none;
-	}
-	.word-subtractor-button-bottom {
-		display:inline;
-	}
-	.words-to-delete {
+.note {
+	margin-top: 30px;
+	padding: 10px;
+	filter: opacity(20%);
+}
+
+.note:hover {
+	filter: opacity(80%);
+}
+
+@media (max-width: 991px) {
+	.headless {
 		margin: 0;
 	}
 }
