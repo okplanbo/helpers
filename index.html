@@ -1,78 +1,159 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>Text tools</title>
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-	   <link href="css/main.css" rel="stylesheet"/>
-      
-      <!-- jq 3.3.1 -->
-	   <script src="js/jquery.min.js"></script>
-	   <!-- Az.js - NLP library with support of russian language -->
-      <script type="text/javascript" src="js/az.min.js"></script>
+    <head>
+        <title>Text tools</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link href="css/main.css" rel="stylesheet" />
 
-      <script type="text/javascript" src="js/main.js" defer></script>
-      
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-   </head>
-   <body>
-      <div class="container">
-         <div class="row">
+        <!-- jq 3.3.1 -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Az.js - NLP library -->
+        <script type="text/javascript" src="js/az.min.js"></script>
+
+        <script type="text/javascript" src="js/main.js" defer></script>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body class="container">
+        <div class="row">
             <div class="col-md-6">
-               <h2>Duplicate line exterminator</h2>
-               <p>Add some text. Duplicate lines will be deleted, line order may differ from given original.</p>
-               <textarea id="strings" type="text" class="form-control" cols="40" rows="5"></textarea>
-               <input type="button" id="start" class="btn btn-success" name="delete" value="Exterminate!">
+                <h2>Duplicate line exterminator</h2>
+                <p>
+                    Add some text. Duplicate lines will be deleted, line order
+                    may differ from given original.
+                </p>
+                <textarea
+                    id="strings"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <input
+                    type="button"
+                    id="remove-duplicates"
+                    class="btn btn-success"
+                    value="Exterminate!"
+                />
             </div>
             <div class="col-md-6">
-               <h2>Link trimmer</h2>
-               <p>Add some text containing http/https hyperlinks. Everything but links will be removed. Doubles will remain.</p>
-               <textarea id="text-with-links" type="text" class="form-control" cols="40" rows="5"></textarea>
-               <input type="button" id="findlinks" class="btn btn-success" value="Find links!"></button>
+                <h2>Link trimmer</h2>
+                <p>
+                    Add some text containing http/https hyperlinks. Everything
+                    but links will be removed. Doubles will remain.
+                </p>
+                <textarea
+                    id="text-with-links"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <input
+                    type="button"
+                    id="find-links"
+                    class="btn btn-success"
+                    value="Find links!"
+                />
             </div>
-         </div>
-         <hr>
-         <div class="row">
+        </div>
+        <div class="row">
             <div class="col-md-6">
-               <h2>Weird reducer</h2>
-               <p>Insert a column of numbers. All numbers will be decreased by 2000 each and placed in one row, separated by commas. And don't even ask me why i needed this tool :-)</p>
-               <textarea id="column-nums" type="text" class="form-control" cols="40" rows="5"></textarea>
-               <input type="button" id="convertToRow" class="btn btn-success" value="Reduce 'em!">
+                <h2>Weird reducer</h2>
+                <p>
+                    Insert a column of numbers. All numbers will be decreased by
+                    2000 each and placed in one row separated by commas.
+                </p>
+                <textarea
+                    id="column-nums"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <input
+                    type="button"
+                    id="convert-to-row"
+                    class="btn btn-success"
+                    value="Reduce 'em!"
+                />
             </div>
             <div class="col-md-6">
-               <h2>Word extractor</h2>
-               <p>Paste some text for semantic analysis. Each unique word from the text will appear on it's separate row.</p>
-               <textarea id="semtext" type="text" class="form-control" cols="40" rows="5"></textarea>
-               <input type="button" id="semAnal" class="btn btn-success" value="Search and sort!">
+                <h2>Word extractor</h2>
+                <p>
+                    Paste some text for semantic analysis. Each unique word from
+                    the text will appear on it's separate row.
+                </p>
+                <textarea
+                    id="semtext"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <input
+                    type="button"
+                    id="extract-words"
+                    class="btn btn-success"
+                    value="Search and sort!"
+                />
             </div>
-         </div>
-         <hr>
-         <div class="row">
+        </div>
+        <div class="row">
             <div class="col-md-4">
-				<h2>Row sum calculator</h2>
-               <p>One single column of numbers, thats all it takes.</p>
-               <textarea id="nums-to-calculate" type="text" class="form-control" cols="40" rows="5"></textarea>
-			   <div style="clear:both;">
-			      <input type="button" id="addup" class="btn btn-success" value="Add all up!">
-			   </div>
+                <h2>Row sum calculator</h2>
+                <p>One single column of numbers, thats all it takes.</p>
+                <textarea
+                    id="nums-to-calculate"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <input
+                    type="button"
+                    id="addup"
+                    class="btn btn-success"
+                    value="Add all up!"
+                />
             </div>
             <div class="col-md-4">
-				<h2>Strict dumb censor</h2>
-               <p>List of words or some text.</p>
-               <textarea id="from-what-to-cut" type="text" class="form-control" cols="40" rows="5"></textarea>
-			   <div style="clear:both;" class="word-subtractor-button-top">
-			      <input type="button" id="start2" class="btn btn-success" name="delete2" value="Remove words!">
-			   </div>
+                <h2>Strict dumb censor</h2>
+                <p>A list of words or some text.</p>
+                <textarea
+                    id="from-what-to-cut"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
             </div>
-            <div class="col-md-4 words-to-delete">
-               <p>List of words to exclude.</p>
-               <textarea id="what-to-cut" type="text" class="form-control" cols="40" rows="5"></textarea>
-			   <div style="clear:both;" class="word-subtractor-button-bottom">
-			      <input type="button" id="start2" class="btn btn-success" name="delete2" value="Remove words!">
-			   </div>
+            <div class="col-md-4 headless">
+                <p>A list of words to exclude.</p>
+                <textarea
+                    id="what-to-cut"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <div class="word-subtractor-button-bottom">
+                    <input
+                        type="button"
+                        id="remove-words"
+                        class="btn btn-success"
+                        value="Remove words!"
+                    />
+                </div>
             </div>
-         </div>
-         <hr>
-      </div>
-   </body>
+        </div>
+        <div class="bottom">
+            <p class="note">
+                This page is a bit ancient (or out of time?). I keep it for
+                it's sentimental value and use it as my zen garden.
+            </p>
+            <a href="/">Home</a>
+        </div>
+    </body>
 </html>
