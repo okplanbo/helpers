@@ -11,3 +11,10 @@ A tiny project I did ages ago. It helped me and some of my friends with routine 
 - What else do you need..? :-)
 
 Using it as my zen garden from time to time.
+
+## OS-level scripts, helpers
+
+- combine.sh
+- make_file_list.bat
+
+accompanied by their own readme files
