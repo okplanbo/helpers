@@ -82,4 +82,12 @@ $(function () {
         }
         $("#nums-to-calculate").val(sum.toFixed(3));
     });
+    // Row to array converter
+    $("#rows-to-array-btn").click(function () {
+        var rows = $("#rows-to-array-input")
+            .val()
+            .split(/[\r\n]+/);
+        var arrayString = "[" + rows.map(row => `'${row.replace(/'/g, "\\'")}'`).join(", ") + "]";
+        $("#rows-to-array-input").val(arrayString);
+    });
 });

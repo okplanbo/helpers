@@ -1,10 +1,33 @@
 body {
 	max-width: 1100px;
-	margin-bottom: 30px;
+	padding: 30px 0;
+}
+
+noscript {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Fallback */
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    padding: 2rem;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.no-js-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+	font-weight: bold;
+    padding: 0.3rem;
+    height: 100%;
 }
 
 textarea {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .headless {

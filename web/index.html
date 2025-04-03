@@ -16,6 +16,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body class="container">
+        <noscript>
+            <div class='no-js-message'>
+                Please enable JavaScript for the full experience.
+            </div>
+        </noscript>
         <div class="row">
             <div class="col-md-6">
                 <h2>Duplicate line exterminator</h2>
@@ -100,6 +105,7 @@
                 />
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-4">
                 <h2>Row sum calculator</h2>
@@ -118,6 +124,7 @@
                     value="Add all up!"
                 />
             </div>
+
             <div class="col-md-4">
                 <h2>Dumb censor</h2>
                 <p>A list of words or some text.</p>
@@ -148,6 +155,27 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Text lines to JS array</h2>
+                <p>Pretty self-explanatory. Single quotes are escaped.</p>
+                <textarea
+                    id="rows-to-array-input"
+                    type="text"
+                    class="form-control"
+                    cols="40"
+                    rows="5"
+                ></textarea>
+                <input
+                    type="button"
+                    id="rows-to-array-btn"
+                    class="btn btn-success"
+                    value="Convert!"
+                />
+            </div>
+        </div>
+
         <div class="bottom">
             <p class="note">
                 This page is a bit ancient, but the code still works! I keep it here
