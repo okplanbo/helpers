@@ -90,4 +90,15 @@ $(function () {
         var arrayString = "[" + rows.map(row => `'${row.replace(/'/g, "\\'")}'`).join(", ") + "]";
         $("#rows-to-array-input").val(arrayString);
     });
+    // Array to rows converter
+    $("#array-to-rows-btn").click(function () {
+        var rows = $("#rows-to-array-input")
+            .val()
+            .replace(/^\[|\]$/g, "")
+            .replace(/\r?\n|\r/g, "")
+            .split(/, ?/)
+            .map(row => row.replace(/^'|'$/g, "").replace(/\\'/g, "'"));
+        var arrayString = rows.join("\r\n");
+        $("#rows-to-array-input").val(arrayString);
+    });
 });

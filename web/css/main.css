@@ -48,6 +48,10 @@ textarea {
 	filter: opacity(80%);
 }
 
+input[type='button'] {
+	margin-right: 10px;
+}
+
 @media (max-width: 991px) {
 	.headless {
 		margin: 0;
