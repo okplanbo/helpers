@@ -34,7 +34,7 @@ $(function () {
         }
         $("#from-what-to-cut").val(unique.join("\r\n"));
     });
-    // Link trimmer
+    // Link extractor
     $("#find-links").click(function () {
         var strings = $("#text-with-links")
             .val()
@@ -100,5 +100,21 @@ $(function () {
             .map(row => row.replace(/^'|'$/g, "").replace(/\\'/g, "'"));
         var arrayString = rows.join("\r\n");
         $("#rows-to-array-input").val(arrayString);
+    });
+    // Link trimmer
+    $("#link-trimmer-btn").click(function () {
+        var isKeepParams = $("#remove-protocol").is(":checked");
+        var links = $("#link-trimmer-input")
+            .val()
+            .split(/[\r\n]+/);
+        var trimmedLinks = links.map(link => {
+            try {
+                let url = new URL(link);
+                return isKeepParams ? url.hostname + url.pathname : `${url.origin}${url.pathname}`;
+            } catch (e) {
+                return link; // If it's not a valid URL, return it unchanged
+            }
+        });
+        $("#link-trimmer-input").val(trimmedLinks.join("\r\n"));
     });
 });

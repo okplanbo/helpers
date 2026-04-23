@@ -44,6 +44,17 @@ textarea {
 	filter: opacity(20%);
 }
 
+.link-trimmer-controls {
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
 .note:hover {
 	filter: opacity(80%);
 }
